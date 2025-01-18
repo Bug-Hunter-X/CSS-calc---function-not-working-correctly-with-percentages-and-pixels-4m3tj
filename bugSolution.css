@@ -1,0 +1,17 @@
+The issue stems from the browser's interpretation of the units involved in the `calc()` function. To ensure accurate results, explicitly specify the unit for each part of the calculation. This ensures that the calculation is performed correctly, regardless of the unit system. Here's the corrected code:
+
+```css
+#myElement {
+  width: calc(50% - 10px);
+}
+```
+
+Instead, try this:
+
+```css
+#myElement {
+  width: calc(50vw - 10px);
+}
+```
+
+By using `vw` (viewport width), we are working with a consistent unit that is easier for the browser to handle in conjunction with pixels.  This change may not resolve the problem in every scenario, but it significantly improves compatibility.
